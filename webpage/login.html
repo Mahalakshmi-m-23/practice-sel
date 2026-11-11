@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form id="loginForm" onsubmit="event.preventDefault(); handleLogin();">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <br>
+        <button type="submit" id="submitBtn">Login</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        function handleLogin() {
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var msg = document.getElementById('message');
+            
+            if (user === 'admin' && pass === 'password123') {
+                msg.innerText = 'Login Successful!';
+            } else {
+                msg.innerText = 'Invalid username or password.';
+            }
+        }
+    </script>
+</body>
+</html>
